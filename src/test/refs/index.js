@@ -16,8 +16,8 @@ class Children2 extends React.Component {
 
     focusInput() {
         this.myRef.current.focus()
-        let dom=ReactDOM.findDOMNode(this.myRef.current)
-        console.log(dom)
+        let dom = ReactDOM.findDOMNode(this.myRef.current)
+        console.log("Children:" + this.myRef)
     }
 
     render() {
@@ -37,21 +37,19 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.myRef = React.createRef()
-        this.clicks=this.clicks.bind(this)
+        this.clicks = this.clicks.bind(this)
     }
 
     clicks() {
         //拿到的是组件实例
-        console.log(this.myRef)
+        console.log( this.myRef)
     }
 
     render() {
-        // 在 ThemeProvider 内部的 ThemedButton 按钮组件使用 state 中的 theme 值，
-        // 而外部的组件使用默认的 theme 值
         return (
             <div>
                 <Children2 ref={this.myRef}/>
-                <input type={"button"} value={"点击"} onClick={this.clicks}/>
+                <input ref={this.myRef} type={"button"} value={"点击"} onClick={this.clicks}/>
             </div>
         );
     }

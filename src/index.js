@@ -7,7 +7,8 @@ import rootReducer from './test/redux/reducers'
 // import App from './test/context/theme-index3';
 // import App from './test/error_boundary/index';
 // import App from './test/redux/components/App';
-import App from './test/component/APP3';
+// import App from './test/refs/index';
+import App from './test/component/APP5';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 
