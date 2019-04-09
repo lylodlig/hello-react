@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Header from './Header'
 import {HeaderContext} from './HeaderContext'
 
-
+//Context
 export class ToolBar extends Component {
     render() {
         return (

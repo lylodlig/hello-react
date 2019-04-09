@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+//高阶组件
 class Header extends React.Component {
 
     render() {
