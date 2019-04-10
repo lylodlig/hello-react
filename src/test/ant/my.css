@@ -1,5 +1,16 @@
-@import '~antd/dist/antd.css';
-
 .App {
     text-align: center;
+}
+
+.body .ant-menu-item {
+    height: 100px;
+    line-height: 100px;
+}
+
+.body .ant-menu-item i {
+    font-size: 40px;
+}
+
+.body .ant-menu-item span {
+    font-size: 40px;
 }
