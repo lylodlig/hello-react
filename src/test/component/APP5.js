@@ -18,7 +18,7 @@ export class SubContent extends Component {
 
     componentWillMount() {
         console.log("Context=" + this.context.content)
-        this.context.content="修改的Context"
+        // this.context.content="修改的Context"
     }
 
     render() {

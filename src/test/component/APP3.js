@@ -12,13 +12,13 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                {/*<Children obj={this} header={(<h1>这里是Header</h1>)} footer={(<h1>这里是Footer</h1>)}></Children>*/}
+                <Children obj={this} header={(<h1>这里是Header</h1>)} footer={(<h1>这里是Footer</h1>)}></Children>
 
 
-                {/*<Children>*/}
-                {/*<h1>这里是Header</h1>*/}
-                {/*<h1>这里是Footer</h1>*/}
-                {/*</Children>*/}
+                <Children>
+                <h1>这里是Header</h1>
+                <h1>这里是Footer</h1>
+                </Children>
 
                 <Children >
                     {this.state.content}
@@ -38,21 +38,21 @@ class Children extends React.Component {
 
     render() {
         console.log(this.props)
-        // return (
-        //     <div>
-        //         {this.props.header}
-        //         <h1>我是子组件{this.props.likedText}</h1>
-        //         {this.props.footer}
-        //     </div>
-        // )
-        console.log(this.props.children)
         return (
             <div>
-                {this.props.children[0]}
+                {this.props.header}
                 <h1>我是子组件{this.props.likedText}</h1>
-                {this.props.children[1]}
+                {this.props.footer}
             </div>
         )
+        // console.log(this.props.children)
+        // return (
+        //     <div>
+        //         {this.props.children[0]}
+        //         <h1>我是子组件{this.props.likedText}</h1>
+        //         {this.props.children[1]}
+        //     </div>
+        // )
     }
 
 }
