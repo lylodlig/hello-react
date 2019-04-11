@@ -8,8 +8,8 @@ import rootReducer from './test/redux/reducers'
 // import App from './test/error_boundary/index';
 // import App from './test/redux/components/App';
 // import App from './test/refs/index';
-// import App from './test/component/APP7';
-import App from './test/ant/APP';
+import App from './test/component/APP11';
+// import App from './test/ant/APP';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 import thunk from 'redux-thunk';

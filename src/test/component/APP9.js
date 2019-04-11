@@ -10,8 +10,25 @@ class WelcomeClass extends React.Component {
     }
 }
 
-function WelcomeSomething(props) {
-    return <h1>Hello,{props.text}</h1>
+class WelcomeSomething extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        console.log("componentWillReceiveProps:")
+        console.log(nextProps, nextContext)
+    }
+
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        console.log("shouldComponentUpdate")
+        console.log(nextProps, nextState, nextContext)
+        return true
+    }
+
+    render() {
+        return <h1>Hello,{this.props.text}</h1>
+    }
 }
 
 class Counter extends React.Component {

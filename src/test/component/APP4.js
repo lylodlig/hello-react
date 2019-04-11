@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 //高阶组件
 class Header extends React.Component {
 
+    static test() {
+        console.log("测试方法")
+    }
+
     render() {
         return (
             <div>
@@ -21,6 +25,10 @@ function withWrap(WrappedComponent) {
             localStorage.setItem('user', '李枝宇')
         }
 
+        static test() {
+            WrappedComponent.test()
+        }
+
         componentWillMount() {
             let user = localStorage.getItem('user');
             this.setState({
@@ -29,13 +37,16 @@ function withWrap(WrappedComponent) {
         }
 
         render() {
+
             return (<WrappedComponent data={this.state.user}/>)
         }
     }
 }
 
 export function APP() {
+        // new Header().test()
     let NewComponent = withWrap(Header);
+     NewComponent.test()
     return (<div>
         <NewComponent/>
     </div>)
