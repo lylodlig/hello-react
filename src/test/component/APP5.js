@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useContext} from 'react';
 import Header from './Header'
 import {HeaderContext} from './HeaderContext'
 
@@ -18,7 +18,12 @@ export class SubContent extends Component {
 
     componentWillMount() {
         console.log("Context=" + this.context.content)
-        // this.context.content="修改的Context"
+        this.context.content="修改的Context"
+    }
+
+    click() {
+        this.context.content = "修改的Context"
+        // this.forceUpdate()
     }
 
     render() {
@@ -27,10 +32,18 @@ export class SubContent extends Component {
                 <HeaderContext.Consumer>
                     {value => (<h1>SubContent:{value.content}</h1>)}
                 </HeaderContext.Consumer>
-
+                <button onClick={this.click.bind(this)}>点击修改</button>
             </div>
         )
     }
+}
+
+function Test() {
+    const value = useContext(HeaderContext)
+    console.log(value)
+    return (
+        <div>测试</div>
+    )
 }
 
 export class Content extends Component {
@@ -39,6 +52,7 @@ export class Content extends Component {
             <div>
                 <h1>Content</h1>
                 <SubContent/>
+                <Test/>
             </div>
         )
     }

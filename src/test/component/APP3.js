@@ -45,14 +45,14 @@ class Children extends React.Component {
                 {this.props.footer}
             </div>
         )
-        // console.log(this.props.children)
-        // return (
-        //     <div>
-        //         {this.props.children[0]}
-        //         <h1>我是子组件{this.props.likedText}</h1>
-        //         {this.props.children[1]}
-        //     </div>
-        // )
+        console.log(this.props.children)
+        return (
+            <div>
+                {this.props.children[0]}
+                <h1>我是子组件{this.props.likedText}</h1>
+                {this.props.children[1]}
+            </div>
+        )
     }
 
 }

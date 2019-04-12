@@ -5,7 +5,6 @@ function Example() {
     const state = useState(0);
     const count=state[0]
     const setCount=state[1]
-    console.log("-----"+count)
 
     // Similar to componentDidMount and componentDidUpdate:
     useEffect(() => {
