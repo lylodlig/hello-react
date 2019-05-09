@@ -21,19 +21,22 @@ const getVisibleTodos = (todos, filter) => {
  * @param todos
  * @param toggleTodo
  */
-const Test = ({todos, toggleTodo}) => {
+const Test = ({todos, isLogin, toggleTodo, change}) => {
     return (<div>
-        <h1>测试</h1>
+        <h1>测试{isLogin}</h1>
+        <button onClick={change}>点击</button>
         <TodoList toggleTodo={toggleTodo} todos={todos}/>
     </div>)
 }
 //描述怎么把state转化为props
 const mapStateToProps = state => ({
     todos: getVisibleTodos(state.todos, state.visibilityFilter),
+    isLogin: state.isLogin
 })
 //描述触发指定的dispatch
 const mapDispatchToProps = dispatch => ({
-    toggleTodo: id => dispatch(toggleTodo(id))
+    toggleTodo: id => dispatch(toggleTodo(id)),
+    change: () => dispatch({type: "Change"})
 })
 
 export default connect(
